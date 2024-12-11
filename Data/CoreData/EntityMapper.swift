@@ -8,6 +8,7 @@
 import Domain
 
 public extension Song {
+  @discardableResult
   func toCoreDataEntity() -> SongEntity {
     let entity = SongEntity(context: CoreDataManager.shared.context)
     entity.id = id
@@ -29,6 +30,7 @@ public extension PlaylistEntity {
 }
 
 public extension Playlist {
+  @discardableResult
   func toCoreDataEntity() -> PlaylistEntity {
     let entity = PlaylistEntity(context: CoreDataManager.shared.context)
     entity.id = id

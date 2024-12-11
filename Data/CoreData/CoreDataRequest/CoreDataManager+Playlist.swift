@@ -30,7 +30,7 @@ extension CoreDataManager: CoreDataPlaylist {
   }
 
   func addPlaylist(playlist: Playlist) -> Bool {
-    let playlistEntity = playlist.toCoreDataEntity()
+    playlist.toCoreDataEntity()
     save()
     return true
   }

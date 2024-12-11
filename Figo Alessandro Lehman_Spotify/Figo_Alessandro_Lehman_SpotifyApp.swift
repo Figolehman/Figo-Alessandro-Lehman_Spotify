@@ -11,7 +11,7 @@ import SwiftUI
 struct Figo_Alessandro_Lehman_SpotifyApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainTabBarView()
         }
     }
 }
