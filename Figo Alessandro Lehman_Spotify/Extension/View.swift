@@ -37,7 +37,7 @@ extension View {
   func font(_ fontName: FontType, fontSize: CGFloat, lineHeight: CGFloat) -> some View {
     self
       .font(Font.custom(type: fontName, size: fontSize))
-      .lineSpacing(lineHeight - UIFont(name: fontName.rawValue, size: fontSize)?.lineHeight ?? fontSize)
-      .padding(.vertical, (lineHeight - UIFont(name: fontName.rawValue, size: fontSize)?.lineHeight ?? fontSize) / 2)
+      .lineSpacing(lineHeight - (UIFont(name: fontName.rawValue, size: fontSize)?.lineHeight ?? fontSize))
+      .padding(.vertical, (lineHeight - (UIFont(name: fontName.rawValue, size: fontSize)?.lineHeight ?? fontSize)) / 2)
   }
 }
