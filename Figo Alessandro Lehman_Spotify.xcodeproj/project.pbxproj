@@ -17,6 +17,16 @@
 		1B50F1522D0950FF00276308 /* Domain.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B50F1512D0950FF00276308 /* Domain.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1B50F1552D0950FF00276308 /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B50F14F2D0950FF00276308 /* Domain.framework */; };
 		1B50F1562D0950FF00276308 /* Domain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1B50F14F2D0950FF00276308 /* Domain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		1B50F1732D09527A00276308 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 1B50F1722D09527A00276308 /* Moya */; };
+		1B50F1762D09529C00276308 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 1B50F1752D09529C00276308 /* SDWebImageSwiftUI */; };
+		1B50F1792D0952CB00276308 /* netfox in Frameworks */ = {isa = PBXBuildFile; productRef = 1B50F1782D0952CB00276308 /* netfox */; };
+		1B50F17C2D0954A700276308 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 1B50F17B2D0954A700276308 /* RxSwift */; };
+		1B50F1802D0954F400276308 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 1B50F17F2D0954F400276308 /* Alamofire */; };
+		1B50F1812D09550900276308 /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B50F14F2D0950FF00276308 /* Domain.framework */; };
+		1B50F1832D09550D00276308 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 1B50F1822D09550D00276308 /* Moya */; };
+		1B50F1852D09551500276308 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 1B50F1842D09551500276308 /* RxSwift */; };
+		1B50F1872D09552200276308 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 1B50F1862D09552200276308 /* Alamofire */; };
+		1B50F1892D09552D00276308 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 1B50F1882D09552D00276308 /* RxSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,8 +78,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B50F17C2D0954A700276308 /* RxSwift in Frameworks */,
+				1B50F1802D0954F400276308 /* Alamofire in Frameworks */,
+				1B50F1792D0952CB00276308 /* netfox in Frameworks */,
+				1B50F1762D09529C00276308 /* SDWebImageSwiftUI in Frameworks */,
 				1B50F1552D0950FF00276308 /* Domain.framework in Frameworks */,
 				1B50F1442D0950F900276308 /* Data.framework in Frameworks */,
+				1B50F1732D09527A00276308 /* Moya in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,6 +92,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B50F1852D09551500276308 /* RxSwift in Frameworks */,
+				1B50F1872D09552200276308 /* Alamofire in Frameworks */,
+				1B50F1832D09550D00276308 /* Moya in Frameworks */,
+				1B50F1812D09550900276308 /* Domain.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,6 +103,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B50F1892D09552D00276308 /* RxSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,6 +117,7 @@
 				1B50F13F2D0950F900276308 /* Data */,
 				1B50F1502D0950FF00276308 /* Domain */,
 				1B50F1292D09509C00276308 /* Products */,
+				1B50F17D2D0954DD00276308 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -145,6 +166,13 @@
 			path = Domain;
 			sourceTree = "<group>";
 		};
+		1B50F17D2D0954DD00276308 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -183,6 +211,13 @@
 				1B50F1542D0950FF00276308 /* PBXTargetDependency */,
 			);
 			name = "Figo Alessandro Lehman_Spotify";
+			packageProductDependencies = (
+				1B50F1722D09527A00276308 /* Moya */,
+				1B50F1752D09529C00276308 /* SDWebImageSwiftUI */,
+				1B50F1782D0952CB00276308 /* netfox */,
+				1B50F17B2D0954A700276308 /* RxSwift */,
+				1B50F17F2D0954F400276308 /* Alamofire */,
+			);
 			productName = "Figo Alessandro Lehman_Spotify";
 			productReference = 1B50F1282D09509C00276308 /* Figo Alessandro Lehman_Spotify.app */;
 			productType = "com.apple.product-type.application";
@@ -201,6 +236,11 @@
 			dependencies = (
 			);
 			name = Data;
+			packageProductDependencies = (
+				1B50F1822D09550D00276308 /* Moya */,
+				1B50F1842D09551500276308 /* RxSwift */,
+				1B50F1862D09552200276308 /* Alamofire */,
+			);
 			productName = Data;
 			productReference = 1B50F13E2D0950F900276308 /* Data.framework */;
 			productType = "com.apple.product-type.framework";
@@ -219,6 +259,9 @@
 			dependencies = (
 			);
 			name = Domain;
+			packageProductDependencies = (
+				1B50F1882D09552D00276308 /* RxSwift */,
+			);
 			productName = Domain;
 			productReference = 1B50F14F2D0950FF00276308 /* Domain.framework */;
 			productType = "com.apple.product-type.framework";
@@ -253,6 +296,13 @@
 				Base,
 			);
 			mainGroup = 1B50F11F2D09509C00276308;
+			packageReferences = (
+				1B50F1712D09527A00276308 /* XCRemoteSwiftPackageReference "Moya" */,
+				1B50F1742D09529C00276308 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+				1B50F1772D0952CB00276308 /* XCRemoteSwiftPackageReference "netfox" */,
+				1B50F17A2D0954A700276308 /* XCRemoteSwiftPackageReference "RxSwift" */,
+				1B50F17E2D0954F400276308 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = 1B50F1292D09509C00276308 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -687,6 +737,97 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1B50F1712D09527A00276308 /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 15.0.3;
+			};
+		};
+		1B50F1742D09529C00276308 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.1.3;
+			};
+		};
+		1B50F1772D0952CB00276308 /* XCRemoteSwiftPackageReference "netfox" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kasketis/netfox";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.21.0;
+			};
+		};
+		1B50F17A2D0954A700276308 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.8.0;
+			};
+		};
+		1B50F17E2D0954F400276308 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.10.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1B50F1722D09527A00276308 /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1B50F1712D09527A00276308 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
+		};
+		1B50F1752D09529C00276308 /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1B50F1742D09529C00276308 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
+		};
+		1B50F1782D0952CB00276308 /* netfox */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1B50F1772D0952CB00276308 /* XCRemoteSwiftPackageReference "netfox" */;
+			productName = netfox;
+		};
+		1B50F17B2D0954A700276308 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1B50F17A2D0954A700276308 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		1B50F17F2D0954F400276308 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1B50F17E2D0954F400276308 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		1B50F1822D09550D00276308 /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1B50F1712D09527A00276308 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
+		};
+		1B50F1842D09551500276308 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1B50F17A2D0954A700276308 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		1B50F1862D09552200276308 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1B50F17E2D0954F400276308 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		1B50F1882D09552D00276308 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1B50F17A2D0954A700276308 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 1B50F1202D09509C00276308 /* Project object */;
 }
