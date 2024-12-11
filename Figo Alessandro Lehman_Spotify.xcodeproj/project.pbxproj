@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		1B50F12C2D09509C00276308 /* Figo_Alessandro_Lehman_SpotifyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B50F12B2D09509C00276308 /* Figo_Alessandro_Lehman_SpotifyApp.swift */; };
-		1B50F12E2D09509C00276308 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B50F12D2D09509C00276308 /* ContentView.swift */; };
 		1B50F1302D09509D00276308 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B50F12F2D09509D00276308 /* Assets.xcassets */; };
 		1B50F1332D09509D00276308 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B50F1322D09509D00276308 /* Preview Assets.xcassets */; };
 		1B50F1412D0950F900276308 /* Data.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B50F1402D0950F900276308 /* Data.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -27,6 +26,15 @@
 		1B50F1852D09551500276308 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 1B50F1842D09551500276308 /* RxSwift */; };
 		1B50F1872D09552200276308 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 1B50F1862D09552200276308 /* Alamofire */; };
 		1B50F1892D09552D00276308 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 1B50F1882D09552D00276308 /* RxSwift */; };
+		1B50F1AE2D09565700276308 /* UIScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B50F18C2D09565600276308 /* UIScreen.swift */; };
+		1B50F1AF2D09565700276308 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B50F18D2D09565600276308 /* View.swift */; };
+		1B50F1B02D09565700276308 /* DataState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B50F18F2D09565600276308 /* DataState.swift */; };
+		1B50F1B12D09565700276308 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B50F1902D09565600276308 /* Font.swift */; };
+		1B50F1B32D09565700276308 /* CustomWebImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B50F1932D09565600276308 /* CustomWebImage.swift */; };
+		1B50F1BC2D09565700276308 /* AvenirNext-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1B50F1A72D09565700276308 /* AvenirNext-Bold.ttf */; };
+		1B50F1BD2D09565700276308 /* AvenirNext-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1B50F1A82D09565700276308 /* AvenirNext-Medium.ttf */; };
+		1B50F1BE2D09565700276308 /* AvenirNext-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1B50F1A92D09565700276308 /* AvenirNext-Regular.ttf */; };
+		1B50F1BF2D09565700276308 /* AppString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B50F1AB2D09565700276308 /* AppString.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,13 +72,21 @@
 /* Begin PBXFileReference section */
 		1B50F1282D09509C00276308 /* Figo Alessandro Lehman_Spotify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Figo Alessandro Lehman_Spotify.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B50F12B2D09509C00276308 /* Figo_Alessandro_Lehman_SpotifyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Figo_Alessandro_Lehman_SpotifyApp.swift; sourceTree = "<group>"; };
-		1B50F12D2D09509C00276308 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		1B50F12F2D09509D00276308 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1B50F1322D09509D00276308 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		1B50F13E2D0950F900276308 /* Data.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Data.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B50F1402D0950F900276308 /* Data.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Data.h; sourceTree = "<group>"; };
 		1B50F14F2D0950FF00276308 /* Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B50F1512D0950FF00276308 /* Domain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Domain.h; sourceTree = "<group>"; };
+		1B50F18C2D09565600276308 /* UIScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIScreen.swift; sourceTree = "<group>"; };
+		1B50F18D2D09565600276308 /* View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		1B50F18F2D09565600276308 /* DataState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataState.swift; sourceTree = "<group>"; };
+		1B50F1902D09565600276308 /* Font.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
+		1B50F1932D09565600276308 /* CustomWebImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomWebImage.swift; sourceTree = "<group>"; };
+		1B50F1A72D09565700276308 /* AvenirNext-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirNext-Bold.ttf"; sourceTree = "<group>"; };
+		1B50F1A82D09565700276308 /* AvenirNext-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirNext-Medium.ttf"; sourceTree = "<group>"; };
+		1B50F1A92D09565700276308 /* AvenirNext-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirNext-Regular.ttf"; sourceTree = "<group>"; };
+		1B50F1AB2D09565700276308 /* AppString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppString.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,7 +151,11 @@
 			isa = PBXGroup;
 			children = (
 				1B50F12B2D09509C00276308 /* Figo_Alessandro_Lehman_SpotifyApp.swift */,
-				1B50F12D2D09509C00276308 /* ContentView.swift */,
+				1B50F18E2D09565600276308 /* Extension */,
+				1B50F1A62D09565700276308 /* Feature */,
+				1B50F1AD2D09565700276308 /* Resource */,
+				1B50F1952D09565600276308 /* ReusableView */,
+				1B50F1912D09565600276308 /* Utils */,
 				1B50F12F2D09509D00276308 /* Assets.xcassets */,
 				1B50F1312D09509D00276308 /* Preview Content */,
 			);
@@ -171,6 +191,90 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1B50F18E2D09565600276308 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				1B50F18C2D09565600276308 /* UIScreen.swift */,
+				1B50F18D2D09565600276308 /* View.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		1B50F1912D09565600276308 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				1B50F18F2D09565600276308 /* DataState.swift */,
+				1B50F1902D09565600276308 /* Font.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		1B50F1952D09565600276308 /* ReusableView */ = {
+			isa = PBXGroup;
+			children = (
+				1B50F1932D09565600276308 /* CustomWebImage.swift */,
+			);
+			path = ReusableView;
+			sourceTree = "<group>";
+		};
+		1B50F19E2D09565700276308 /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Enum;
+			sourceTree = "<group>";
+		};
+		1B50F1A02D09565700276308 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1B50F1A12D09565700276308 /* MainTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				1B50F19E2D09565700276308 /* Enum */,
+				1B50F1A02D09565700276308 /* View */,
+			);
+			path = MainTabBar;
+			sourceTree = "<group>";
+		};
+		1B50F1A62D09565700276308 /* Feature */ = {
+			isa = PBXGroup;
+			children = (
+				1B50F1A12D09565700276308 /* MainTabBar */,
+			);
+			path = Feature;
+			sourceTree = "<group>";
+		};
+		1B50F1AA2D09565700276308 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				1B50F1A72D09565700276308 /* AvenirNext-Bold.ttf */,
+				1B50F1A82D09565700276308 /* AvenirNext-Medium.ttf */,
+				1B50F1A92D09565700276308 /* AvenirNext-Regular.ttf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
+		1B50F1AC2D09565700276308 /* String */ = {
+			isa = PBXGroup;
+			children = (
+				1B50F1AB2D09565700276308 /* AppString.swift */,
+			);
+			path = String;
+			sourceTree = "<group>";
+		};
+		1B50F1AD2D09565700276308 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				1B50F1AA2D09565700276308 /* Font */,
+				1B50F1AC2D09565700276308 /* String */,
+			);
+			path = Resource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -320,7 +424,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				1B50F1332D09509D00276308 /* Preview Assets.xcassets in Resources */,
+				1B50F1BC2D09565700276308 /* AvenirNext-Bold.ttf in Resources */,
 				1B50F1302D09509D00276308 /* Assets.xcassets in Resources */,
+				1B50F1BE2D09565700276308 /* AvenirNext-Regular.ttf in Resources */,
+				1B50F1BD2D09565700276308 /* AvenirNext-Medium.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,8 +452,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1B50F12E2D09509C00276308 /* ContentView.swift in Sources */,
 				1B50F12C2D09509C00276308 /* Figo_Alessandro_Lehman_SpotifyApp.swift in Sources */,
+				1B50F1BF2D09565700276308 /* AppString.swift in Sources */,
+				1B50F1B32D09565700276308 /* CustomWebImage.swift in Sources */,
+				1B50F1B02D09565700276308 /* DataState.swift in Sources */,
+				1B50F1B12D09565700276308 /* Font.swift in Sources */,
+				1B50F1AE2D09565700276308 /* UIScreen.swift in Sources */,
+				1B50F1AF2D09565700276308 /* View.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
