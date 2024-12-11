@@ -9,10 +9,13 @@ import SwiftUI
 import SDWebImageSwiftUI
 
 enum PlaceholderType {
+  case song
   case none
 
   var image: ImageResource? {
     switch self {
+    case .song:
+      return .imgPlaceholderSong
     case .none:
       return nil
     }

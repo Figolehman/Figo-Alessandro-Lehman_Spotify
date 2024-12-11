@@ -9,9 +9,17 @@ import SwiftUI
 
 enum FontType: String {
   // MARK: - Avenir Next
-  case avenirBold = "AvenirNext-Bold"
+  case avenirDemi = "AvenirNext-Demi"
   case avenirMedium = "AvenirNext-Medium"
   case avenirRegular = "AvenirNext-Regular"
+
+  // MARK: - Circular Std
+  case circularBold = "CircularStd-Bold"
+  case circularMedium = "CircularStd-Medium"
+  case circularBook = "CircularStd-Book"
+
+  // MARK: - Montserrat
+  case montserratRegular = "Montserrat-Regular"
 }
 
 extension Font {

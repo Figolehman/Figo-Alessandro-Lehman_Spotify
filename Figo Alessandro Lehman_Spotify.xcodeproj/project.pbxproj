@@ -17,7 +17,6 @@
 		1B50F1552D0950FF00276308 /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B50F14F2D0950FF00276308 /* Domain.framework */; };
 		1B50F1562D0950FF00276308 /* Domain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1B50F14F2D0950FF00276308 /* Domain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1B50F1732D09527A00276308 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 1B50F1722D09527A00276308 /* Moya */; };
-		1B50F1762D09529C00276308 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 1B50F1752D09529C00276308 /* SDWebImageSwiftUI */; };
 		1B50F1792D0952CB00276308 /* netfox in Frameworks */ = {isa = PBXBuildFile; productRef = 1B50F1782D0952CB00276308 /* netfox */; };
 		1B50F17C2D0954A700276308 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 1B50F17B2D0954A700276308 /* RxSwift */; };
 		1B50F1802D0954F400276308 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 1B50F17F2D0954F400276308 /* Alamofire */; };
@@ -31,7 +30,6 @@
 		1B50F1B02D09565700276308 /* DataState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B50F18F2D09565600276308 /* DataState.swift */; };
 		1B50F1B12D09565700276308 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B50F1902D09565600276308 /* Font.swift */; };
 		1B50F1B32D09565700276308 /* CustomWebImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B50F1932D09565600276308 /* CustomWebImage.swift */; };
-		1B50F1BC2D09565700276308 /* AvenirNext-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1B50F1A72D09565700276308 /* AvenirNext-Bold.ttf */; };
 		1B50F1BD2D09565700276308 /* AvenirNext-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1B50F1A82D09565700276308 /* AvenirNext-Medium.ttf */; };
 		1B50F1BE2D09565700276308 /* AvenirNext-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1B50F1A92D09565700276308 /* AvenirNext-Regular.ttf */; };
 		1B50F1BF2D09565700276308 /* AppString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B50F1AB2D09565700276308 /* AppString.swift */; };
@@ -61,6 +59,20 @@
 		1B50F20C2D09687D00276308 /* MainTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B50F20B2D09687D00276308 /* MainTabBarView.swift */; };
 		1B50F20E2D09688400276308 /* SpotifyTabItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B50F20D2D09688400276308 /* SpotifyTabItem.swift */; };
 		1B50F2122D0968A300276308 /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B50F2112D0968A300276308 /* LibraryView.swift */; };
+		1B50F21B2D096C5000276308 /* LibraryRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B50F2162D096C5000276308 /* LibraryRouter.swift */; };
+		1B50F21C2D096C5000276308 /* LibraryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B50F2182D096C5000276308 /* LibraryViewModel.swift */; };
+		1B50F21F2D096CAF00276308 /* PlaylistListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B50F21D2D096CAF00276308 /* PlaylistListView.swift */; };
+		1B50F2202D096CAF00276308 /* ChipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B50F21E2D096CAF00276308 /* ChipView.swift */; };
+		1B50F2242D096FA300276308 /* PlaylistDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B50F2232D096FA300276308 /* PlaylistDetailView.swift */; };
+		1B50F2262D096FD400276308 /* AddPlaylistSongView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B50F2252D096FD400276308 /* AddPlaylistSongView.swift */; };
+		1B50F2272D09711300276308 /* SpotifyContainer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1B50F1F02D09653800276308 /* SpotifyContainer.xcdatamodeld */; };
+		1B50F2292D09737E00276308 /* PlaylistGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B50F2282D09737E00276308 /* PlaylistGridView.swift */; };
+		1B9A36732D097DD900854445 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 1B9A36722D097DD900854445 /* SDWebImageSwiftUI */; };
+		1B9A36762D098B4100854445 /* CircularStd-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1B9A36742D098B4100854445 /* CircularStd-Medium.ttf */; };
+		1B9A36772D098B4100854445 /* CircularStd-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1B9A36752D098B4100854445 /* CircularStd-Bold.ttf */; };
+		1B9A36792D098BCF00854445 /* CircularStd-Book.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1B9A36782D098BCF00854445 /* CircularStd-Book.ttf */; };
+		1B9A36872D09A78400854445 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1B9A36862D09A78400854445 /* Montserrat-Regular.ttf */; };
+		1B9A36892D09A85B00854445 /* AvenirNext-Demi.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1B9A36882D09A85B00854445 /* AvenirNext-Demi.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,7 +121,6 @@
 		1B50F18F2D09565600276308 /* DataState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataState.swift; sourceTree = "<group>"; };
 		1B50F1902D09565600276308 /* Font.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		1B50F1932D09565600276308 /* CustomWebImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomWebImage.swift; sourceTree = "<group>"; };
-		1B50F1A72D09565700276308 /* AvenirNext-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirNext-Bold.ttf"; sourceTree = "<group>"; };
 		1B50F1A82D09565700276308 /* AvenirNext-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirNext-Medium.ttf"; sourceTree = "<group>"; };
 		1B50F1A92D09565700276308 /* AvenirNext-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirNext-Regular.ttf"; sourceTree = "<group>"; };
 		1B50F1AB2D09565700276308 /* AppString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppString.swift; sourceTree = "<group>"; };
@@ -139,6 +150,19 @@
 		1B50F20B2D09687D00276308 /* MainTabBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarView.swift; sourceTree = "<group>"; };
 		1B50F20D2D09688400276308 /* SpotifyTabItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpotifyTabItem.swift; sourceTree = "<group>"; };
 		1B50F2112D0968A300276308 /* LibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryView.swift; sourceTree = "<group>"; };
+		1B50F2162D096C5000276308 /* LibraryRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryRouter.swift; sourceTree = "<group>"; };
+		1B50F2182D096C5000276308 /* LibraryViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryViewModel.swift; sourceTree = "<group>"; };
+		1B50F21D2D096CAF00276308 /* PlaylistListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaylistListView.swift; sourceTree = "<group>"; };
+		1B50F21E2D096CAF00276308 /* ChipView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChipView.swift; sourceTree = "<group>"; };
+		1B50F2232D096FA300276308 /* PlaylistDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistDetailView.swift; sourceTree = "<group>"; };
+		1B50F2252D096FD400276308 /* AddPlaylistSongView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlaylistSongView.swift; sourceTree = "<group>"; };
+		1B50F2282D09737E00276308 /* PlaylistGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistGridView.swift; sourceTree = "<group>"; };
+		1B9A36742D098B4100854445 /* CircularStd-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CircularStd-Medium.ttf"; sourceTree = "<group>"; };
+		1B9A36752D098B4100854445 /* CircularStd-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CircularStd-Bold.ttf"; sourceTree = "<group>"; };
+		1B9A36782D098BCF00854445 /* CircularStd-Book.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CircularStd-Book.ttf"; sourceTree = "<group>"; };
+		1B9A36862D09A78400854445 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
+		1B9A36882D09A85B00854445 /* AvenirNext-Demi.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirNext-Demi.ttf"; sourceTree = "<group>"; };
+		1B9A368A2D09AA7100854445 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,10 +170,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B9A36732D097DD900854445 /* SDWebImageSwiftUI in Frameworks */,
 				1B50F17C2D0954A700276308 /* RxSwift in Frameworks */,
 				1B50F1802D0954F400276308 /* Alamofire in Frameworks */,
 				1B50F1792D0952CB00276308 /* netfox in Frameworks */,
-				1B50F1762D09529C00276308 /* SDWebImageSwiftUI in Frameworks */,
 				1B50F1552D0950FF00276308 /* Domain.framework in Frameworks */,
 				1B50F1442D0950F900276308 /* Data.framework in Frameworks */,
 				1B50F1732D09527A00276308 /* Moya in Frameworks */,
@@ -181,6 +205,7 @@
 		1B50F11F2D09509C00276308 = {
 			isa = PBXGroup;
 			children = (
+				1B9A368A2D09AA7100854445 /* README.md */,
 				1B50F12A2D09509C00276308 /* Figo Alessandro Lehman_Spotify */,
 				1B50F13F2D0950F900276308 /* Data */,
 				1B50F1502D0950FF00276308 /* Domain */,
@@ -275,7 +300,10 @@
 		1B50F1952D09565600276308 /* ReusableView */ = {
 			isa = PBXGroup;
 			children = (
+				1B50F21E2D096CAF00276308 /* ChipView.swift */,
+				1B50F21D2D096CAF00276308 /* PlaylistListView.swift */,
 				1B50F1932D09565600276308 /* CustomWebImage.swift */,
+				1B50F2282D09737E00276308 /* PlaylistGridView.swift */,
 			);
 			path = ReusableView;
 			sourceTree = "<group>";
@@ -308,6 +336,7 @@
 		1B50F1A62D09565700276308 /* Feature */ = {
 			isa = PBXGroup;
 			children = (
+				1B50F2212D096F9500276308 /* Playlist */,
 				1B50F20F2D09689200276308 /* Library */,
 				1B50F1A12D09565700276308 /* MainTabBar */,
 			);
@@ -317,7 +346,11 @@
 		1B50F1AA2D09565700276308 /* Font */ = {
 			isa = PBXGroup;
 			children = (
-				1B50F1A72D09565700276308 /* AvenirNext-Bold.ttf */,
+				1B9A36862D09A78400854445 /* Montserrat-Regular.ttf */,
+				1B9A36752D098B4100854445 /* CircularStd-Bold.ttf */,
+				1B9A36882D09A85B00854445 /* AvenirNext-Demi.ttf */,
+				1B9A36782D098BCF00854445 /* CircularStd-Book.ttf */,
+				1B9A36742D098B4100854445 /* CircularStd-Medium.ttf */,
 				1B50F1A82D09565700276308 /* AvenirNext-Medium.ttf */,
 				1B50F1A92D09565700276308 /* AvenirNext-Regular.ttf */,
 			);
@@ -470,6 +503,8 @@
 		1B50F20F2D09689200276308 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				1B50F2172D096C5000276308 /* Router */,
+				1B50F2192D096C5000276308 /* ViewModel */,
 				1B50F2102D09689800276308 /* View */,
 			);
 			path = Library;
@@ -479,6 +514,39 @@
 			isa = PBXGroup;
 			children = (
 				1B50F2112D0968A300276308 /* LibraryView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1B50F2172D096C5000276308 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				1B50F2162D096C5000276308 /* LibraryRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		1B50F2192D096C5000276308 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				1B50F2182D096C5000276308 /* LibraryViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		1B50F2212D096F9500276308 /* Playlist */ = {
+			isa = PBXGroup;
+			children = (
+				1B50F2222D096F9A00276308 /* View */,
+			);
+			path = Playlist;
+			sourceTree = "<group>";
+		};
+		1B50F2222D096F9A00276308 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1B50F2232D096FA300276308 /* PlaylistDetailView.swift */,
+				1B50F2252D096FD400276308 /* AddPlaylistSongView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -523,10 +591,10 @@
 			name = "Figo Alessandro Lehman_Spotify";
 			packageProductDependencies = (
 				1B50F1722D09527A00276308 /* Moya */,
-				1B50F1752D09529C00276308 /* SDWebImageSwiftUI */,
 				1B50F1782D0952CB00276308 /* netfox */,
 				1B50F17B2D0954A700276308 /* RxSwift */,
 				1B50F17F2D0954F400276308 /* Alamofire */,
+				1B9A36722D097DD900854445 /* SDWebImageSwiftUI */,
 			);
 			productName = "Figo Alessandro Lehman_Spotify";
 			productReference = 1B50F1282D09509C00276308 /* Figo Alessandro Lehman_Spotify.app */;
@@ -608,10 +676,10 @@
 			mainGroup = 1B50F11F2D09509C00276308;
 			packageReferences = (
 				1B50F1712D09527A00276308 /* XCRemoteSwiftPackageReference "Moya" */,
-				1B50F1742D09529C00276308 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
 				1B50F1772D0952CB00276308 /* XCRemoteSwiftPackageReference "netfox" */,
 				1B50F17A2D0954A700276308 /* XCRemoteSwiftPackageReference "RxSwift" */,
 				1B50F17E2D0954F400276308 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				1B9A36712D097DD900854445 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
 			);
 			productRefGroup = 1B50F1292D09509C00276308 /* Products */;
 			projectDirPath = "";
@@ -629,10 +697,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B9A36872D09A78400854445 /* Montserrat-Regular.ttf in Resources */,
 				1B50F1332D09509D00276308 /* Preview Assets.xcassets in Resources */,
-				1B50F1BC2D09565700276308 /* AvenirNext-Bold.ttf in Resources */,
 				1B50F1302D09509D00276308 /* Assets.xcassets in Resources */,
+				1B9A36892D09A85B00854445 /* AvenirNext-Demi.ttf in Resources */,
 				1B50F1BE2D09565700276308 /* AvenirNext-Regular.ttf in Resources */,
+				1B9A36792D098BCF00854445 /* CircularStd-Book.ttf in Resources */,
+				1B9A36762D098B4100854445 /* CircularStd-Medium.ttf in Resources */,
+				1B9A36772D098B4100854445 /* CircularStd-Bold.ttf in Resources */,
 				1B50F1BD2D09565700276308 /* AvenirNext-Medium.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -659,13 +731,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				1B50F12C2D09509C00276308 /* Figo_Alessandro_Lehman_SpotifyApp.swift in Sources */,
+				1B50F2272D09711300276308 /* SpotifyContainer.xcdatamodeld in Sources */,
+				1B50F2262D096FD400276308 /* AddPlaylistSongView.swift in Sources */,
 				1B50F20E2D09688400276308 /* SpotifyTabItem.swift in Sources */,
+				1B50F2292D09737E00276308 /* PlaylistGridView.swift in Sources */,
 				1B50F1BF2D09565700276308 /* AppString.swift in Sources */,
 				1B50F1B32D09565700276308 /* CustomWebImage.swift in Sources */,
+				1B50F2202D096CAF00276308 /* ChipView.swift in Sources */,
+				1B50F21B2D096C5000276308 /* LibraryRouter.swift in Sources */,
+				1B50F21C2D096C5000276308 /* LibraryViewModel.swift in Sources */,
+				1B50F21F2D096CAF00276308 /* PlaylistListView.swift in Sources */,
 				1B50F20C2D09687D00276308 /* MainTabBarView.swift in Sources */,
 				1B50F1B02D09565700276308 /* DataState.swift in Sources */,
 				1B50F1B12D09565700276308 /* Font.swift in Sources */,
 				1B50F1AE2D09565700276308 /* UIScreen.swift in Sources */,
+				1B50F2242D096FA300276308 /* PlaylistDetailView.swift in Sources */,
 				1B50F2122D0968A300276308 /* LibraryView.swift in Sources */,
 				1B50F1AF2D09565700276308 /* View.swift in Sources */,
 			);
@@ -855,6 +935,8 @@
 				DEVELOPMENT_TEAM = JGSV4C4BP3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -885,6 +967,8 @@
 				DEVELOPMENT_TEAM = JGSV4C4BP3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -1093,14 +1177,6 @@
 				minimumVersion = 15.0.3;
 			};
 		};
-		1B50F1742D09529C00276308 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 3.1.3;
-			};
-		};
 		1B50F1772D0952CB00276308 /* XCRemoteSwiftPackageReference "netfox" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/kasketis/netfox";
@@ -1125,6 +1201,14 @@
 				minimumVersion = 5.10.2;
 			};
 		};
+		1B9A36712D097DD900854445 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.1.3;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1132,11 +1216,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 1B50F1712D09527A00276308 /* XCRemoteSwiftPackageReference "Moya" */;
 			productName = Moya;
-		};
-		1B50F1752D09529C00276308 /* SDWebImageSwiftUI */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 1B50F1742D09529C00276308 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
-			productName = SDWebImageSwiftUI;
 		};
 		1B50F1782D0952CB00276308 /* netfox */ = {
 			isa = XCSwiftPackageProductDependency;
@@ -1172,6 +1251,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 1B50F17A2D0954A700276308 /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxSwift;
+		};
+		1B9A36722D097DD900854445 /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1B9A36712D097DD900854445 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
 		};
 /* End XCSwiftPackageProductDependency section */
 
