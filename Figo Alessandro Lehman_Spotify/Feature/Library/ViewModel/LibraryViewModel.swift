@@ -41,19 +41,4 @@ class LibraryViewModel: ObservableObject {
       )
       .disposed(by: disposeBag)
   }
-
-//  func getSearchSong(param: SearchSongParam) {
-//    searchResult = .loading
-//    songUseCase.getSearchSong(param: param)
-//      .observe(on: MainScheduler.instance)
-//      .subscribe(
-//        onNext: { [weak self] result in
-//          self?.searchResult = .success(data: result)
-//        },
-//        onError: { [weak self] error in
-//          self?.searchResult = .failed(error: error)
-//        }
-//      )
-//      .disposed(by: disposeBag)
-//  }
 }

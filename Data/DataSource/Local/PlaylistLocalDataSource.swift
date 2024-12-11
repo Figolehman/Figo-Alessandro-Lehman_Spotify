@@ -11,6 +11,7 @@ import RxSwift
 public protocol PlaylistLocalDataSource {
   func getPlaylists() -> Observable<[Playlist]> 
   func addPlaylist(playlist: Playlist) -> Bool
+  func addSongToPlaylist(song: Song, playlistID: String) -> Bool
 }
 
 public struct DefaultPlaylistlocalDataSource: PlaylistLocalDataSource {
@@ -22,5 +23,9 @@ public struct DefaultPlaylistlocalDataSource: PlaylistLocalDataSource {
 
   public func addPlaylist(playlist: Playlist) -> Bool {
     CoreDataManager.shared.addPlaylist(playlist: playlist)
+  }
+
+  public func addSongToPlaylist(song: Song, playlistID: String) -> Bool {
+    CoreDataManager.shared.addSongToPlaylist(song: song, playlistID: playlistID)
   }
 }

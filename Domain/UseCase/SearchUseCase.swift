@@ -1,5 +1,5 @@
 //
-//  SongUseCase.swift
+//  SearchUseCase.swift
 //  Spotify
 //
 //  Created by Figo Alessandro Lehman on 11/12/24.
@@ -7,10 +7,10 @@
 
 import RxSwift
 
-public struct SongUseCase {
-  private let repository: SongRepository
+public struct SearchUseCase {
+  private let repository: SearchRepository
 
-  public init(repository: SongRepository) {
+  public init(repository: SearchRepository) {
     self.repository = repository
   }
 

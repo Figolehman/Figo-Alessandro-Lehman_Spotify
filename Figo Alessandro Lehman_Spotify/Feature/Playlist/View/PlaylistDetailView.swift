@@ -5,23 +5,20 @@
 //  Created by Figo Alessandro Lehman on 11/12/24.
 //
 
+import Domain
 import SwiftUI
 
 struct PlaylistDetailView: View {
   @EnvironmentObject var router: LibraryRouter
-  let id: String
-
-  init(id: String) {
-    self.id = id
-  }
+  let playlist: Playlist
 
   var body: some View {
     VStack(spacing: 75) {
       VStack(alignment: .leading, spacing: 9) {
-        Text("My first library")
+        Text(playlist.name)
           .foregroundColor(.primaryText)
 
-        Text("0 song")
+        Text(String(format: AppString.lblSongCount, "\(playlist.songs.count)"))
           .foregroundColor(.secondaryText)
 
         Spacer()
@@ -49,7 +46,7 @@ struct PlaylistDetailView: View {
       }
       ToolbarItem(placement: .topBarTrailing) {
         Button {
-          router.navigate(to: .addPlaylistSong(playlistID: id))
+          router.navigate(to: .addPlaylistSong(playlistID: playlist.id))
         } label: {
           Image(.icPlus)
             .resizable()
@@ -62,7 +59,7 @@ struct PlaylistDetailView: View {
 
 #Preview {
   NavigationView {
-    PlaylistDetailView(id: "0")
+    PlaylistDetailView(playlist: .init(name: "asd", songs: []))
       .environmentObject(LibraryRouter())
   }
 }

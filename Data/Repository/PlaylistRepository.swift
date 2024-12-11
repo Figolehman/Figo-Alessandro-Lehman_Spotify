@@ -22,4 +22,8 @@ public struct DefaultPlaylistRepository: PlaylistRepository {
   public func addPlaylist(playlist: Playlist) -> Bool {
     localDataSource.addPlaylist(playlist: playlist)
   }
+
+  public func addSongToPlaylist(song: Song, playlistID: String) -> Bool {
+    localDataSource.addSongToPlaylist(song: song, playlistID: playlistID)
+  }
 }

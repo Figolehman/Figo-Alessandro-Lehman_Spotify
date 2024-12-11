@@ -19,12 +19,23 @@ public extension Song {
   }
 }
 
+public extension SongEntity {
+  func toDomain() -> Song {
+    return Song(
+      id: id,
+      name: name ?? "",
+      artistName: artistName ?? "",
+      imageURL: imageURL ?? ""
+    )
+  }
+}
+
 public extension PlaylistEntity {
   func toDomain() -> Playlist {
     return Playlist(
       id: id ?? "",
       name: name ?? "",
-      songs: songs?.allObjects as? [Song] ?? []
+      songs: (songs?.allObjects as? [SongEntity] ?? []).compactMap { $0.toDomain() }
     )
   }
 }

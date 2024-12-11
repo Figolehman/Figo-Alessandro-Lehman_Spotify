@@ -21,5 +21,9 @@ public struct PlaylistUseCase {
   public func addPlaylist(playlist: Playlist) -> Bool {
     repository.addPlaylist(playlist: playlist)
   }
+
+  public func addSongToPlaylist(song: Song, playlistID: String) -> Bool {
+    repository.addSongToPlaylist(song: song, playlistID: playlistID)
+  }
 }
 

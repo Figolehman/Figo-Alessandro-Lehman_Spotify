@@ -34,5 +34,30 @@ extension CoreDataManager: CoreDataPlaylist {
     save()
     return true
   }
+
+  func addSongToPlaylist(song: Song, playlistID: String) -> Bool {
+    guard let playlist = getExistingPlaylist(id: playlistID) else { return false }
+    if let existingSong = getExistingSong(song) {
+      existingSong.addToPlaylists(playlist)
+      playlist.songs?.adding(existingSong)
+    } else {
+      let songEntity = song.toCoreDataEntity()
+      songEntity.addToPlaylists(playlist)
+    }
+    save()
+    return true
+  }
+
+  func getExistingPlaylist(id: String) -> PlaylistEntity? {
+    let request = NSFetchRequest<PlaylistEntity>(entityName: "PlaylistEntity")
+    request.predicate = NSPredicate(format: "id == %@", id)
+
+    do {
+      return try context.fetch(request).first
+    } catch {
+      print(error.localizedDescription)
+      return nil
+    }
+  }
 }
 

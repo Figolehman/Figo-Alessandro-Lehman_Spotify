@@ -23,6 +23,7 @@ struct LibraryView: View {
   @State private var shouldNavigateToPlaylist = false
 
   @State private var playlistInputName = AppString.lblPlaylistNamePlaceholder
+  @State private var playlistToAdd: Playlist? = nil
 
   @State private var playlistsLayout: PlaylistsLayout = .list
 
@@ -47,9 +48,11 @@ struct LibraryView: View {
       .sheet(
         isPresented: $isShowingAddPlaylistSheet,
         onDismiss: {
-          if shouldNavigateToPlaylist {
-            router.navigate(to: .playlistDetail(id: ""))
+          if let playlistToAdd,
+             shouldNavigateToPlaylist {
+            router.navigate(to: .playlistDetail(playlist: playlistToAdd))
             shouldNavigateToPlaylist = false
+            self.playlistToAdd = nil
           }
         },
         content: {
@@ -74,7 +77,9 @@ struct LibraryView: View {
             }
 
             Button {
-              libraryVM.addPlaylist(playlist: Playlist(name: playlistInputName, songs: []))
+              let playlist = Playlist(name: playlistInputName, songs: [])
+              playlistToAdd = playlist
+              libraryVM.addPlaylist(playlist: playlist)
               shouldNavigateToPlaylist = true
               isShowingAddPlaylistSheet = false
             } label: {
@@ -133,8 +138,8 @@ struct LibraryView: View {
       })
       .navigationDestination(for: LibraryRouter.Destination.self) { destination in
         switch destination {
-        case let .playlistDetail(id):
-          PlaylistDetailView(id: id)
+        case let .playlistDetail(playlist):
+          PlaylistDetailView(playlist: playlist)
         case let .addPlaylistSong(playlistID):
           AddPlaylistSongView(playlistID: playlistID)
         }
@@ -191,7 +196,7 @@ private extension LibraryView {
             ForEach(playlists, id: \.id) { playlist in
               PlaylistListView(playlist: playlist)
                 .onTapGesture {
-                  router.navigate(to: .playlistDetail(id: playlist.id))
+                  router.navigate(to: .playlistDetail(playlist: playlist))
                 }
             }
           }
@@ -201,7 +206,7 @@ private extension LibraryView {
             ForEach(playlists, id: \.id) { playlist in
               PlaylistGridView(playlist: playlist)
                 .onTapGesture {
-                  router.navigate(to: .playlistDetail(id: playlist.id))
+                  router.navigate(to: .playlistDetail(playlist: playlist))
                 }
             }
           })

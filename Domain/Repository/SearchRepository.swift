@@ -1,5 +1,5 @@
 //
-//  SongRepository.swift
+//  SearchRepository.swift
 //  Spotify
 //
 //  Created by Figo Alessandro Lehman on 11/12/24.
@@ -7,6 +7,6 @@
 
 import RxSwift
 
-public protocol SongRepository {
+public protocol SearchRepository {
   func getSearchSong(param: SearchSongParam) -> Observable<SearchResult>
 }

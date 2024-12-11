@@ -42,17 +42,23 @@ extension CoreDataManager: CoreDataSearch {
     save()
   }
 
-  private func getExistingHistory(_ song: Song) -> HistoryEntity? {
-    let currentHistories = getSearchHistory()
-    return currentHistories.first(
-      where: { historyEntity in
-        historyEntity.song?.id == song.id
-      }
-    )
+  func getExistingHistory(_ song: Song) -> HistoryEntity? {
+    let request = NSFetchRequest<HistoryEntity>(entityName: "HistoryEntity")
+    request.predicate = NSPredicate(format: "id == %@", song.id)
+    var histories = [HistoryEntity]()
+
+    do {
+      histories = try context.fetch(request)
+    } catch {
+      print(error.localizedDescription)
+    }
+
+    return histories.first
   }
 
-  private func getExistingSong(_ song: Song) -> SongEntity? {
+  func getExistingSong(_ song: Song) -> SongEntity? {
     let request = NSFetchRequest<SongEntity>(entityName: "SongEntity")
+    request.predicate = NSPredicate(format: "id == %@", song.id)
     var songs = [SongEntity]()
 
     do {
@@ -61,9 +67,7 @@ extension CoreDataManager: CoreDataSearch {
       print(error.localizedDescription)
     }
 
-    return songs.first { songEntity in
-      songEntity.id == song.id
-    }
+    return songs.first
   }
 }
 
