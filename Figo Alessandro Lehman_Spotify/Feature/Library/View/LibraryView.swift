@@ -185,41 +185,58 @@ private extension LibraryView {
 
   @ViewBuilder
   func listView() -> some View {
-    VStack {
-      Button {
-        playlistsLayout = playlistsLayout == .grid ? .list : .grid
-      } label: {
-        Image(playlistsLayout == .list ? .icGrid : .icList)
-          .resizable()
-          .frame(width: 16, height: 16)
-          .frame(maxWidth: .infinity, alignment: .trailing)
-      }
-      if case .success(let playlists) = libraryVM.playlists {
-        switch playlistsLayout {
-        case .list:
-          VStack {
-            ForEach(playlists, id: \.id) { playlist in
-              PlaylistListView(playlist: playlist)
-                .onTapGesture {
-                  router.navigate(to: .playlistDetail(playlist: playlist))
-                }
-            }
+    ScrollView {
+      VStack(spacing: playlistsLayout == .list ? 14 : 17) {
+        HStack(alignment: .top, spacing: 14.25) {
+          if playlistsLayout == .grid {
+            Image(.icSort)
+              .resizable()
+              .frame(width: 14.75, height: 9)
+              .offset(y: 2)
+
+            Text("Most Recent")
+              .font(.custom(type: .circularBook, size: 11))
+              .foregroundColor(.primaryText)
           }
-        case .grid:
-          let columns = Array(repeating: GridItem(.flexible()), count: 2)
-          LazyVGrid(columns: columns, spacing: 32, content: {
-            ForEach(playlists, id: \.id) { playlist in
-              PlaylistGridView(playlist: playlist)
-                .onTapGesture {
-                  router.navigate(to: .playlistDetail(playlist: playlist))
-                }
-            }
-          })
+
+          Spacer()
+
+          Button {
+            playlistsLayout = playlistsLayout == .grid ? .list : .grid
+          } label: {
+            Image(playlistsLayout == .list ? .icGrid : .icList)
+              .resizable()
+              .frame(width: 16, height: 16)
+          }
         }
+
+        if case .success(let playlists) = libraryVM.playlists {
+          switch playlistsLayout {
+          case .list:
+            VStack {
+              ForEach(playlists, id: \.id) { playlist in
+                PlaylistListView(playlist: playlist)
+                  .onTapGesture {
+                    router.navigate(to: .playlistDetail(playlist: playlist))
+                  }
+              }
+            }
+          case .grid:
+            let columns = Array(repeating: GridItem(.flexible()), count: 2)
+            LazyVGrid(columns: columns, spacing: 32, content: {
+              ForEach(playlists, id: \.id) { playlist in
+                PlaylistGridView(playlist: playlist)
+                  .onTapGesture {
+                    router.navigate(to: .playlistDetail(playlist: playlist))
+                  }
+              }
+            })
+          }
+        }
+        Spacer()
       }
-      Spacer()
+      .padding(.vertical, 15)
     }
-    .padding(.vertical, 15)
   }
 }
 
