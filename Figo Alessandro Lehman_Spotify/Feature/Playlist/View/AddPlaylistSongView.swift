@@ -28,12 +28,12 @@ struct AddPlaylistSongView: View {
         
         VStack(spacing: 20) {
           if searchText.count == 0 {
-            Text("Recent Searches")
+            Text(AppString.lblSearchHistory)
               .font(.avenirDemi, fontSize: 17, lineHeight: 23.22)
               .foregroundColor(.primaryText)
               .frame(maxWidth: .infinity, alignment: .leading)
           } else {
-            Text("Search Result")
+            Text(AppString.lblSearchResult)
               .font(.avenirDemi, fontSize: 17, lineHeight: 23.22)
               .foregroundColor(.primaryText)
               .frame(maxWidth: .infinity, alignment: .leading)
@@ -119,7 +119,7 @@ private extension AddPlaylistSongView {
           "",
           text: $searchText,
           prompt: 
-            Text("Search")
+            Text(AppString.lblSearch)
             .font(.custom(type: .avenirMedium, size: 15))
             .foregroundColor(.primaryText)
         )
@@ -133,7 +133,7 @@ private extension AddPlaylistSongView {
       Button {
         router.navigateBack()
       } label: {
-        Text("Cancel")
+        Text(AppString.lblCancel)
           .foregroundColor(.primaryText)
           .padding(.horizontal, 6)
       }

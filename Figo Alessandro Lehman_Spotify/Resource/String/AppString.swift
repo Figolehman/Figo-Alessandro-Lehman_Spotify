@@ -19,8 +19,12 @@ struct AppString {
   // MARK: - Others
   static let lblPlaylist = "Playlist"
   static let lblConfirm = "Confirm"
+  static let lblCancel = "Cancel"
+  static let lblSearch = "Search"
   static let lblAddPlaylistDescription = "Create a playlist with a song"
   static let lblPlaylistNamePlaceholder = "My Playlist"
   static let lblSheetTitleAddPlaylist = "Name your playlist."
   static let lblSongCount = "%@ songs"
+  static let lblSearchHistory = "Recent Searches"
+  static let lblSearchResult = "Recent Result"
 }
