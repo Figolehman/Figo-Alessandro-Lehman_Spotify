@@ -21,11 +21,11 @@ struct AddPlaylistSongView: View {
   }
 
   var body: some View {
-    ScrollView {
-      VStack(spacing: 33) {
-        navigationBar()
-          .padding(.top, 14)
-        
+    VStack(spacing: 33) {
+      navigationBar()
+        .padding(.top, 14)
+
+      ScrollView {
         VStack(spacing: 20) {
           if searchText.count == 0 {
             Text(AppString.lblSearchHistory)
@@ -43,7 +43,7 @@ struct AddPlaylistSongView: View {
               .font(.avenirDemi, fontSize: 17, lineHeight: 23.22)
               .foregroundColor(.primaryText)
               .frame(maxWidth: .infinity, alignment: .leading)
-            
+
             if case let .success(result) = playlistVM.searchResult {
               ForEach(result.songs, id: \.id) { song in
                 SongView(
@@ -76,9 +76,9 @@ struct AddPlaylistSongView: View {
           }
         }
         .padding(.horizontal, 28)
-
-        Spacer()
       }
+
+      Spacer()
     }
     .navigationBarBackButtonHidden()
     .background(
@@ -136,11 +136,11 @@ private extension AddPlaylistSongView {
           .resizable()
           .renderingMode(.template)
           .frame(width: 12, height: 12)
-        
+
         TextField(
           "",
           text: $searchText,
-          prompt: 
+          prompt:
             Text(AppString.lblSearch)
             .font(.custom(type: .avenirMedium, size: 15))
             .foregroundColor(.primaryText)
@@ -151,7 +151,7 @@ private extension AddPlaylistSongView {
       .background(Color.searchBarBackground)
       .foregroundColor(.primaryText)
       .cornerRadius(10)
-      
+
       Button {
         router.navigateBack()
       } label: {
