@@ -2,7 +2,7 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22758" systemVersion="23F79" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithSwiftData="YES" userDefinedModelVersionIdentifier="">
     <entity name="HistoryEntity" representedClassName="HistoryEntity" syncable="YES" codeGenerationType="class">
         <attribute name="savedAt" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
-        <relationship name="song" maxCount="1" deletionRule="Nullify" destinationEntity="SongEntity"/>
+        <relationship name="song" maxCount="1" deletionRule="Cascade" destinationEntity="SongEntity" inverseName="history" inverseEntity="SongEntity"/>
     </entity>
     <entity name="PlaylistEntity" representedClassName="PlaylistEntity" syncable="YES" codeGenerationType="class">
         <attribute name="id" attributeType="String"/>
@@ -14,6 +14,7 @@
         <attribute name="id" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="imageURL" attributeType="String"/>
         <attribute name="name" attributeType="String"/>
+        <relationship name="history" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="HistoryEntity" inverseName="song" inverseEntity="HistoryEntity"/>
         <relationship name="playlists" toMany="YES" deletionRule="Nullify" destinationEntity="PlaylistEntity" inverseName="songs" inverseEntity="PlaylistEntity"/>
     </entity>
 </model>

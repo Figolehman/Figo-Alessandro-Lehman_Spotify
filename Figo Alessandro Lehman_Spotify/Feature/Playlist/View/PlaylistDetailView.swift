@@ -22,9 +22,11 @@ struct PlaylistDetailView: View {
       VStack(alignment: .leading, spacing: 9) {
         Text(playlist.name)
           .foregroundColor(.primaryText)
+          .font(.circularMedium, fontSize: 19, lineHeight: 24.03)
 
         Text(String(format: AppString.lblSongCount, "\(playlist.songs.count)"))
           .foregroundColor(.secondaryText)
+          .font(.circularMedium, fontSize: 12, lineHeight: 15.18)
 
         LazyVStack(spacing: 16) {
           ForEach(playlist.songs, id: \.id) { song in

@@ -20,4 +20,12 @@ public struct DefaultSearchRepository: SearchRepository {
   public func getSearchSong(param: SearchSongParam) -> Observable<SearchResult> {
     remoteDataSource.getSearchSong(param: param)
   }
+
+  public func getSearchHistories(limit: Int) -> Observable<[History]> {
+    localDataSource.getSearchHistories(limit: limit)
+  }
+
+  public func addSearchHistory(song: Song) -> Bool {
+    localDataSource.addSearchHistory(song: song)
+  }
 }

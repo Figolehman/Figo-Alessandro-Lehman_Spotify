@@ -6,15 +6,21 @@
 //
 
 import Domain
+import RxSwift
 
 public protocol SearchLocalDataSource {
-  func addSearchHistory(song: Song)
+  func getSearchHistories(limit: Int) -> Observable<[History]>
+  func addSearchHistory(song: Song) -> Bool
 }
 
 public struct DefaultSearchlocalDataSource: SearchLocalDataSource {
   public init() {}
 
-  public func addSearchHistory(song: Song) {
-    
+  public func getSearchHistories(limit: Int) -> Observable<[History]> {
+    CoreDataManager.shared.getSearchHistories(limit: limit)
+  }
+
+  public func addSearchHistory(song: Song) -> Bool{
+    CoreDataManager.shared.addSearchHistory(song: song)
   }
 }

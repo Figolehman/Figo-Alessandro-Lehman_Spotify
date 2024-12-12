@@ -18,6 +18,7 @@ struct AppString {
 
   // MARK: - Others
   static let lblPlaylist = "Playlist"
+  static let lblSong = "Song"
   static let lblConfirm = "Confirm"
   static let lblCancel = "Cancel"
   static let lblSearch = "Search"
@@ -26,5 +27,5 @@ struct AppString {
   static let lblSheetTitleAddPlaylist = "Name your playlist."
   static let lblSongCount = "%@ songs"
   static let lblSearchHistory = "Recent Searches"
-  static let lblSearchResult = "Recent Result"
+  static let lblSearchResult = "Search Result"
 }

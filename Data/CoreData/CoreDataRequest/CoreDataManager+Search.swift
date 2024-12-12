@@ -7,26 +7,27 @@
 
 import CoreData
 import Domain
+import RxSwift
 
-protocol CoreDataSearch {
-  func getSearchHistory() -> [HistoryEntity]
-  func addSearchHistory(song: Song)
-}
-
-extension CoreDataManager: CoreDataSearch {
-  func getSearchHistory() -> [HistoryEntity] {
+extension CoreDataManager {
+  func getSearchHistories(limit: Int) -> Observable<[History]> {
+    let subject = ReplaySubject<[History]>.createUnbounded()
     let request = NSFetchRequest<HistoryEntity>(entityName: "HistoryEntity")
+    request.fetchLimit = limit
+    request.sortDescriptors = [NSSortDescriptor(key: "savedAt", ascending: false)]
 
     do {
-      return try context.fetch(request)
+      let histories = try context.fetch(request).compactMap { $0.toDomain() }
+      subject.onNext(histories)
     } catch {
       print(error.localizedDescription)
+      subject.onError(error)
     }
 
-    return []
+    return subject
   }
 
-  func addSearchHistory(song: Song) {
+  func addSearchHistory(song: Song) -> Bool {
     if let existingHistory = getExistingHistory(song) {
       existingHistory.savedAt = Int64(Date().timeIntervalSince1970)
     } else if let existingSong = getExistingSong(song) {
@@ -40,11 +41,12 @@ extension CoreDataManager: CoreDataSearch {
     }
 
     save()
+    return true
   }
 
   func getExistingHistory(_ song: Song) -> HistoryEntity? {
     let request = NSFetchRequest<HistoryEntity>(entityName: "HistoryEntity")
-    request.predicate = NSPredicate(format: "songs. == %lld", song.id)
+    request.predicate = NSPredicate(format: "song.id == %lld", song.id)
     var histories = [HistoryEntity]()
 
     do {

@@ -50,3 +50,9 @@ public extension Playlist {
     return entity
   }
 }
+
+public extension HistoryEntity {
+  func toDomain() -> History {
+    return History(song: self.song!.toDomain())
+  }
+}

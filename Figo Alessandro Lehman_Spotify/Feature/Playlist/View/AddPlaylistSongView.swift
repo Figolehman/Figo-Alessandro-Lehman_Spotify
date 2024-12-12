@@ -32,6 +32,12 @@ struct AddPlaylistSongView: View {
               .font(.avenirDemi, fontSize: 17, lineHeight: 23.22)
               .foregroundColor(.primaryText)
               .frame(maxWidth: .infinity, alignment: .leading)
+
+            if case let .success(histories) = playlistVM.searchHistories {
+              ForEach(Array(histories.enumerated()), id: \.offset) { _, history in
+                SongHistoryView(song: history.song)
+              }
+            }
           } else {
             Text(AppString.lblSearchResult)
               .font(.avenirDemi, fontSize: 17, lineHeight: 23.22)
@@ -59,7 +65,13 @@ struct AddPlaylistSongView: View {
                     )
                   }
                 )
+                .onTapGesture {
+                  playlistVM.addSearchHistory(song: song)
+                }
               }
+            } else if .loading == playlistVM.searchResult {
+              ProgressView()
+                .progressViewStyle(CircularProgressViewStyle(tint: .primaryText))
             }
           }
         }
@@ -75,12 +87,16 @@ struct AddPlaylistSongView: View {
         .ignoresSafeArea()
     )
     .onAppear {
-      
+      playlistVM.getSearchHistories(limit: 10)
     }
     .onChange(of: searchText) { _, newValue in
-      playlistVM.getSearchSong(
-        param: SearchSongParam(term: newValue)
-      )
+      if newValue.isEmpty {
+        playlistVM.getSearchHistories(limit: 10)
+      } else {
+        playlistVM.getSearchSong(
+          param: SearchSongParam(term: newValue)
+        )
+      }
     }
     .observeData(
       playlistVM.$addSongToPlaylistStatus,
@@ -99,6 +115,12 @@ struct AddPlaylistSongView: View {
       onNext: { playlist in
         guard let playlist else { return }
         self.playlist = playlist
+      }
+    )
+    .observeData(
+      playlistVM.$addSongToPlaylistStatus,
+      onNext: { _ in
+        playlistVM.getSearchHistories(limit: 10)
       }
     )
   }

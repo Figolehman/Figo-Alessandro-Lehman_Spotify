@@ -17,4 +17,12 @@ public struct SearchUseCase {
   public func getSearchSong(param: SearchSongParam) -> Observable<SearchResult> {
     repository.getSearchSong(param: param)
   }
+
+  public func getSearchHistories(limit: Int) -> Observable<[History]> {
+    repository.getSearchHistories(limit: limit)
+  }
+
+  public func addSearchHistory(song: Song) -> Bool {
+    repository.addSearchHistory(song: song)
+  }
 }

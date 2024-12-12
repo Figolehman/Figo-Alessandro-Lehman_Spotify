@@ -10,12 +10,7 @@ import CoreData
 import Domain
 import RxSwift
 
-protocol CoreDataPlaylist {
-  func getPlaylists() -> Observable<[Playlist]>
-  func addPlaylist(playlist: Playlist) -> Bool
-}
-
-extension CoreDataManager: CoreDataPlaylist {
+extension CoreDataManager {
   func getPlaylists() -> Observable<[Playlist]> {
     let subject = ReplaySubject<[Playlist]>.createUnbounded()
     let request = NSFetchRequest<PlaylistEntity>(entityName: "PlaylistEntity")
