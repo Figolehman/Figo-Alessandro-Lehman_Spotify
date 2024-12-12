@@ -142,9 +142,9 @@ struct LibraryView: View {
           PlaylistDetailView(
             playlist: playlist
           )
-        case let .addPlaylistSong(playlistID, playlistVM):
+        case let .addPlaylistSong(playlist, playlistVM):
           AddPlaylistSongView(
-            playlistID: playlistID,
+            playlist: playlist,
             playlistVM: playlistVM
           )
         }

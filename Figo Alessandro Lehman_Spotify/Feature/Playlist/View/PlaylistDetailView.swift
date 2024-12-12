@@ -59,7 +59,7 @@ struct PlaylistDetailView: View {
         Button {
           router.navigate(
             to: .addPlaylistSong(
-              playlistID: playlist.id,
+              playlist: playlist,
               playlistVM: playlistVM
             )
           )

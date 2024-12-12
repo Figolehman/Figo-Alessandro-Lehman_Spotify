@@ -9,12 +9,17 @@ import Domain
 import SwiftUI
 
 struct AddPlaylistSongView: View {
-  let playlistID: String
-  
+  @State private var playlist: Playlist
+
   @EnvironmentObject var router: LibraryRouter
   @ObservedObject var playlistVM: PlaylistViewModel
   @State private var searchText = ""
-  
+
+  init(playlist: Playlist, playlistVM: PlaylistViewModel) {
+    self._playlist = State(initialValue: playlist)
+    self.playlistVM = playlistVM
+  }
+
   var body: some View {
     ScrollView {
       VStack(spacing: 33) {
@@ -38,11 +43,20 @@ struct AddPlaylistSongView: View {
                 SongView(
                   song: song,
                   isAddableToPlaylist: true,
+                  isAddedToPlaylist: playlist.songs.contains(where: { playlistSong in
+                    song.id == playlistSong.id
+                  }),
                   addToPlaylistAction: {
-                    playlistVM.addToPlaylist(song: song, playlistID: playlistID)
+                    playlistVM.addToPlaylist(
+                      song: song,
+                      playlistID: playlist.id
+                    )
                   },
                   removeFromPlaylistAction: {
-
+                    playlistVM.removefromPlaylist(
+                      song: song,
+                      playlistID: playlist.id
+                    )
                   }
                 )
               }
@@ -68,6 +82,25 @@ struct AddPlaylistSongView: View {
         param: SearchSongParam(term: newValue)
       )
     }
+    .observeData(
+      playlistVM.$addSongToPlaylistStatus,
+      onNext: { _ in
+        playlistVM.getPlaylist(id: playlist.id)
+      }
+    )
+    .observeData(
+      playlistVM.$removeSongFromPlaylistStatus,
+      onNext: { _ in
+        playlistVM.getPlaylist(id: playlist.id)
+      }
+    )
+    .observeData(
+      playlistVM.$playlist,
+      onNext: { playlist in
+        guard let playlist else { return }
+        self.playlist = playlist
+      }
+    )
   }
 }
 
@@ -111,6 +144,6 @@ private extension AddPlaylistSongView {
 
 #Preview {
   NavigationView {
-    AddPlaylistSongView(playlistID: "", playlistVM: .init())
+    AddPlaylistSongView(playlist: .init(name: "ASDASd", songs: []), playlistVM: .init())
   }
 }

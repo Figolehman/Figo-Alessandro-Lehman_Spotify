@@ -30,4 +30,8 @@ public struct DefaultPlaylistRepository: PlaylistRepository {
   public func addSongToPlaylist(song: Song, playlistID: String) -> Bool {
     localDataSource.addSongToPlaylist(song: song, playlistID: playlistID)
   }
+
+  public func removeSongFromPlaylist(song: Song, playlistID: String) -> Bool {
+    localDataSource.removeSongFromPlaylist(song: song, playlistID: playlistID)
+  }
 }

@@ -12,7 +12,7 @@ final class LibraryRouter: ObservableObject {
 
   public enum Destination {
     case playlistDetail(playlist: Playlist)
-    case addPlaylistSong(playlistID: String, playlistVM: PlaylistViewModel)
+    case addPlaylistSong(playlist: Playlist, playlistVM: PlaylistViewModel)
 
     var id: Int {
       switch self {
@@ -44,9 +44,9 @@ final class LibraryRouter: ObservableObject {
 extension LibraryRouter.Destination: Hashable {
   static func == (lhs: LibraryRouter.Destination, rhs: LibraryRouter.Destination) -> Bool {
     if lhs.id == rhs.id {
-      if case let .addPlaylistSong(rhsId, _) = rhs,
-         case let .addPlaylistSong(lhsId, _) = lhs,
-         lhsId == rhsId {
+      if case let .addPlaylistSong(rhsPlaylist, _) = rhs,
+         case let .addPlaylistSong(lhsPlaylist, _) = lhs,
+         lhsPlaylist.id == rhsPlaylist.id {
         return true
       } else if case let .playlistDetail(lhsPlaylist) = lhs,
                 case let .playlistDetail(rhsPlaylist) = rhs,
@@ -62,9 +62,9 @@ extension LibraryRouter.Destination: Hashable {
     case .playlistDetail(let playlist):
       hasher.combine(self.id)
       hasher.combine(playlist.id)
-    case .addPlaylistSong(let playlistID, _):
+    case .addPlaylistSong(let playlist, _):
       hasher.combine(self.id)
-      hasher.combine(playlistID)
+      hasher.combine(playlist.id)
     }
   }
 }

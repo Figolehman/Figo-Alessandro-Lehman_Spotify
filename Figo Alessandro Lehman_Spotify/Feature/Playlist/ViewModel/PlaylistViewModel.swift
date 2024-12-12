@@ -13,6 +13,7 @@ import RxSwift
 class PlaylistViewModel: ObservableObject {
   @Published var searchResult: DataState<SearchResult> = .initiate
   @Published var addSongToPlaylistStatus: DataState<Bool> = .initiate
+  @Published var removeSongFromPlaylistStatus: DataState<Bool> = .initiate
   @Published var playlist: DataState<Playlist?> = .initiate
   var searchText = PublishSubject<String>()
 
@@ -56,6 +57,11 @@ class PlaylistViewModel: ObservableObject {
   func addToPlaylist(song: Song, playlistID: String) {
     addSongToPlaylistStatus = .loading
     addSongToPlaylistStatus = .success(data: playlistUseCase.addSongToPlaylist(song: song, playlistID: playlistID))
+  }
+
+  func removefromPlaylist(song: Song, playlistID: String) {
+    removeSongFromPlaylistStatus = .loading
+    removeSongFromPlaylistStatus = .success(data: playlistUseCase.removeSongFromPlaylist(song: song, playlistID: playlistID))
   }
 
   func getPlaylist(id: String) {

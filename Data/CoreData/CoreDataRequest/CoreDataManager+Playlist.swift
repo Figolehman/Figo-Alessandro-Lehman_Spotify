@@ -48,6 +48,15 @@ extension CoreDataManager: CoreDataPlaylist {
     return true
   }
 
+  func removeSongFromPlaylist(song: Song, playlistID: String) -> Bool {
+    guard let playlist = getExistingPlaylist(id: playlistID) else { return false }
+    if let existingSong = getExistingSong(song) {
+      existingSong.removeFromPlaylists(playlist)
+      save()
+    }
+    return true
+  }
+
   func getExistingPlaylist(id: String) -> PlaylistEntity? {
     let request = NSFetchRequest<PlaylistEntity>(entityName: "PlaylistEntity")
     request.predicate = NSPredicate(format: "id == %@", id)

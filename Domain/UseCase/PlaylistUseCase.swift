@@ -29,5 +29,9 @@ public struct PlaylistUseCase {
   public func addSongToPlaylist(song: Song, playlistID: String) -> Bool {
     repository.addSongToPlaylist(song: song, playlistID: playlistID)
   }
+
+  public func removeSongFromPlaylist(song: Song, playlistID: String) -> Bool {
+    repository.removeSongFromPlaylist(song: song, playlistID: playlistID)
+  }
 }
 

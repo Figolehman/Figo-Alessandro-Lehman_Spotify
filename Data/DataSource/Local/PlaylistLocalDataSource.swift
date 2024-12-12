@@ -13,6 +13,7 @@ public protocol PlaylistLocalDataSource {
   func addPlaylist(playlist: Playlist) -> Bool
   func getPlaylist(id: String) -> Observable<Playlist?>
   func addSongToPlaylist(song: Song, playlistID: String) -> Bool
+  func removeSongFromPlaylist(song: Song, playlistID: String) -> Bool
 }
 
 public struct DefaultPlaylistlocalDataSource: PlaylistLocalDataSource {
@@ -32,5 +33,9 @@ public struct DefaultPlaylistlocalDataSource: PlaylistLocalDataSource {
 
   public func addSongToPlaylist(song: Song, playlistID: String) -> Bool {
     CoreDataManager.shared.addSongToPlaylist(song: song, playlistID: playlistID)
+  }
+
+  public func removeSongFromPlaylist(song: Song, playlistID: String) -> Bool {
+    CoreDataManager.shared.removeSongFromPlaylist(song: song, playlistID: playlistID)
   }
 }
