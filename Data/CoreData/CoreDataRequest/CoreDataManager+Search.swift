@@ -44,7 +44,7 @@ extension CoreDataManager: CoreDataSearch {
 
   func getExistingHistory(_ song: Song) -> HistoryEntity? {
     let request = NSFetchRequest<HistoryEntity>(entityName: "HistoryEntity")
-    request.predicate = NSPredicate(format: "id == %@", song.id)
+    request.predicate = NSPredicate(format: "songs. == %lld", song.id)
     var histories = [HistoryEntity]()
 
     do {
@@ -58,7 +58,7 @@ extension CoreDataManager: CoreDataSearch {
 
   func getExistingSong(_ song: Song) -> SongEntity? {
     let request = NSFetchRequest<SongEntity>(entityName: "SongEntity")
-    request.predicate = NSPredicate(format: "id == %@", song.id)
+    request.predicate = NSPredicate(format: "id == %lld", song.id)
     var songs = [SongEntity]()
 
     do {

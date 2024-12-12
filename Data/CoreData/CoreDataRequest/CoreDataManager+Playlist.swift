@@ -59,5 +59,21 @@ extension CoreDataManager: CoreDataPlaylist {
       return nil
     }
   }
+
+  func getExistingPlaylist(id: String) -> Observable<Playlist?> {
+    let subject = ReplaySubject<Playlist?>.createUnbounded()
+    let request = NSFetchRequest<PlaylistEntity>(entityName: "PlaylistEntity")
+    request.predicate = NSPredicate(format: "id == %@", id)
+
+    do {
+      let playlist = try context.fetch(request).first
+      subject.onNext(playlist?.toDomain())
+    } catch {
+      print(error.localizedDescription)
+      subject.onError(error)
+    }
+
+    return subject
+  }
 }
 

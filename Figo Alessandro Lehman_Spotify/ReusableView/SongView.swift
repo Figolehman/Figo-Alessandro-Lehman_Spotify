@@ -37,7 +37,7 @@ struct SongView: View {
       }
       .frame(maxWidth: .infinity, alignment: .leading)
 
-      if isAddedToPlaylist {
+      if !isAddableToPlaylist {
         Image(.icThreeDots)
           .resizable()
           .frame(width: 3, height: 18)

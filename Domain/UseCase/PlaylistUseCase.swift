@@ -18,6 +18,10 @@ public struct PlaylistUseCase {
     repository.getPlaylists()
   }
 
+  public func getPlaylist(id: String) -> Observable<Playlist?> {
+    repository.getPlaylist(id: id)
+  }
+
   public func addPlaylist(playlist: Playlist) -> Bool {
     repository.addPlaylist(playlist: playlist)
   }

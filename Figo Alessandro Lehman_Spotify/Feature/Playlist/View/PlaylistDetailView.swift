@@ -10,7 +10,12 @@ import SwiftUI
 
 struct PlaylistDetailView: View {
   @EnvironmentObject var router: LibraryRouter
-  let playlist: Playlist
+  @StateObject var playlistVM = PlaylistViewModel()
+  @State private var playlist: Playlist
+
+  init(playlist: Playlist) {
+    self._playlist = State(initialValue: playlist)
+  }
 
   var body: some View {
     VStack(spacing: 75) {
@@ -20,6 +25,12 @@ struct PlaylistDetailView: View {
 
         Text(String(format: AppString.lblSongCount, "\(playlist.songs.count)"))
           .foregroundColor(.secondaryText)
+
+        LazyVStack(spacing: 16) {
+          ForEach(playlist.songs, id: \.id) { song in
+            SongView(song: song, isAddableToPlaylist: false)
+          }
+        }
 
         Spacer()
       }
@@ -46,7 +57,12 @@ struct PlaylistDetailView: View {
       }
       ToolbarItem(placement: .topBarTrailing) {
         Button {
-          router.navigate(to: .addPlaylistSong(playlistID: playlist.id))
+          router.navigate(
+            to: .addPlaylistSong(
+              playlistID: playlist.id,
+              playlistVM: playlistVM
+            )
+          )
         } label: {
           Image(.icPlus)
             .resizable()
@@ -54,6 +70,16 @@ struct PlaylistDetailView: View {
         }
       }
     }
+    .onAppear {
+      playlistVM.getPlaylist(id: playlist.id)
+    }
+    .observeData(
+      playlistVM.$playlist,
+      onNext: { playlist in
+        guard let playlist else { return }
+        self.playlist = playlist
+      }
+    )
   }
 }
 

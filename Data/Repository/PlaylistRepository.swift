@@ -19,6 +19,10 @@ public struct DefaultPlaylistRepository: PlaylistRepository {
     localDataSource.getPlaylists()
   }
 
+  public func getPlaylist(id: String) -> Observable<Playlist?> {
+    localDataSource.getPlaylist(id: id)
+  }
+
   public func addPlaylist(playlist: Playlist) -> Bool {
     localDataSource.addPlaylist(playlist: playlist)
   }

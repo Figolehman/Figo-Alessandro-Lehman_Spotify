@@ -139,9 +139,14 @@ struct LibraryView: View {
       .navigationDestination(for: LibraryRouter.Destination.self) { destination in
         switch destination {
         case let .playlistDetail(playlist):
-          PlaylistDetailView(playlist: playlist)
-        case let .addPlaylistSong(playlistID):
-          AddPlaylistSongView(playlistID: playlistID)
+          PlaylistDetailView(
+            playlist: playlist
+          )
+        case let .addPlaylistSong(playlistID, playlistVM):
+          AddPlaylistSongView(
+            playlistID: playlistID,
+            playlistVM: playlistVM
+          )
         }
       }
       .onAppear {

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 enum DataState<T>: Equatable {
   static func == (lhs: DataState<T>, rhs: DataState<T>) -> Bool {
@@ -14,7 +15,6 @@ enum DataState<T>: Equatable {
 
   case initiate
   case loading
-  case empty
   case failed(error: Error)
   case success(data: T)
 
@@ -39,5 +39,30 @@ extension DataState {
         self = .loading
       }
     }
+  }
+}
+
+extension View {
+  func observeData<T>(
+    _ data: Published<DataState<T>>.Publisher,
+    onNext: ((T) -> Void)? = nil,
+    onLoading: ((Bool) -> Void)? = nil,
+    onError: ((Error) -> Void)? = nil
+  ) -> some View {
+    self
+      .onReceive(data) { state in
+        switch state {
+        case .success(let value):
+          onLoading?(false)
+          onNext?(value)
+        case .loading:
+          onLoading?(true)
+        case .failed(let error):
+          onLoading?(false)
+          onError?(error)
+        default:
+          break
+        }
+      }
   }
 }

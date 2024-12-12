@@ -12,7 +12,7 @@ struct AddPlaylistSongView: View {
   let playlistID: String
   
   @EnvironmentObject var router: LibraryRouter
-  @StateObject var playlistVM = PlaylistViewModel()
+  @ObservedObject var playlistVM: PlaylistViewModel
   @State private var searchText = ""
   
   var body: some View {
@@ -111,6 +111,6 @@ private extension AddPlaylistSongView {
 
 #Preview {
   NavigationView {
-    AddPlaylistSongView(playlistID: "")
+    AddPlaylistSongView(playlistID: "", playlistVM: .init())
   }
 }
