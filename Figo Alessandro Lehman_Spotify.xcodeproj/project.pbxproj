@@ -17,7 +17,6 @@
 		1B50F1552D0950FF00276308 /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B50F14F2D0950FF00276308 /* Domain.framework */; };
 		1B50F1562D0950FF00276308 /* Domain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1B50F14F2D0950FF00276308 /* Domain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1B50F1732D09527A00276308 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 1B50F1722D09527A00276308 /* Moya */; };
-		1B50F1792D0952CB00276308 /* netfox in Frameworks */ = {isa = PBXBuildFile; productRef = 1B50F1782D0952CB00276308 /* netfox */; };
 		1B50F17C2D0954A700276308 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 1B50F17B2D0954A700276308 /* RxSwift */; };
 		1B50F1802D0954F400276308 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 1B50F17F2D0954F400276308 /* Alamofire */; };
 		1B50F1812D09550900276308 /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B50F14F2D0950FF00276308 /* Domain.framework */; };
@@ -181,7 +180,6 @@
 				1B9A36732D097DD900854445 /* SDWebImageSwiftUI in Frameworks */,
 				1B50F17C2D0954A700276308 /* RxSwift in Frameworks */,
 				1B50F1802D0954F400276308 /* Alamofire in Frameworks */,
-				1B50F1792D0952CB00276308 /* netfox in Frameworks */,
 				1B50F1552D0950FF00276308 /* Domain.framework in Frameworks */,
 				1B50F1442D0950F900276308 /* Data.framework in Frameworks */,
 				1B50F1732D09527A00276308 /* Moya in Frameworks */,
@@ -611,7 +609,6 @@
 			name = "Figo Alessandro Lehman_Spotify";
 			packageProductDependencies = (
 				1B50F1722D09527A00276308 /* Moya */,
-				1B50F1782D0952CB00276308 /* netfox */,
 				1B50F17B2D0954A700276308 /* RxSwift */,
 				1B50F17F2D0954F400276308 /* Alamofire */,
 				1B9A36722D097DD900854445 /* SDWebImageSwiftUI */,
@@ -696,7 +693,6 @@
 			mainGroup = 1B50F11F2D09509C00276308;
 			packageReferences = (
 				1B50F1712D09527A00276308 /* XCRemoteSwiftPackageReference "Moya" */,
-				1B50F1772D0952CB00276308 /* XCRemoteSwiftPackageReference "netfox" */,
 				1B50F17A2D0954A700276308 /* XCRemoteSwiftPackageReference "RxSwift" */,
 				1B50F17E2D0954F400276308 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				1B9A36712D097DD900854445 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
@@ -1201,14 +1197,6 @@
 				minimumVersion = 15.0.3;
 			};
 		};
-		1B50F1772D0952CB00276308 /* XCRemoteSwiftPackageReference "netfox" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/kasketis/netfox";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.21.0;
-			};
-		};
 		1B50F17A2D0954A700276308 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ReactiveX/RxSwift";
@@ -1240,11 +1228,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 1B50F1712D09527A00276308 /* XCRemoteSwiftPackageReference "Moya" */;
 			productName = Moya;
-		};
-		1B50F1782D0952CB00276308 /* netfox */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 1B50F1772D0952CB00276308 /* XCRemoteSwiftPackageReference "netfox" */;
-			productName = netfox;
 		};
 		1B50F17B2D0954A700276308 /* RxSwift */ = {
 			isa = XCSwiftPackageProductDependency;
